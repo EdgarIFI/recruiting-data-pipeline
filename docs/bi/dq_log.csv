@@ -1,0 +1,503 @@
+table_name,entity_id,check_id,severity,action
+applications,APP-00005,source_variants,WARN,mapped to canonical source
+applications,APP-00014,source_variants,WARN,mapped to canonical source
+applications,APP-00022,source_variants,WARN,mapped to canonical source
+applications,APP-00116,source_variants,WARN,mapped to canonical source
+applications,APP-00119,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00129,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00130,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00144,source_variants,WARN,mapped to canonical source
+applications,APP-00171,source_variants,WARN,mapped to canonical source
+applications,APP-00176,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00197,source_variants,WARN,mapped to canonical source
+applications,APP-00202,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-00208,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00219,source_variants,WARN,mapped to canonical source
+applications,APP-00228,source_variants,WARN,mapped to canonical source
+applications,APP-00233,source_variants,WARN,mapped to canonical source
+applications,APP-00241,source_variants,WARN,mapped to canonical source
+applications,APP-00242,source_variants,WARN,mapped to canonical source
+applications,APP-00277,source_variants,WARN,mapped to canonical source
+applications,APP-00298,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00316,source_variants,WARN,mapped to canonical source
+applications,APP-00320,source_variants,WARN,mapped to canonical source
+applications,APP-00328,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00331,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00335,source_variants,WARN,mapped to canonical source
+applications,APP-00337,source_variants,WARN,mapped to canonical source
+applications,APP-00348,source_variants,WARN,mapped to canonical source
+applications,APP-00371,source_variants,WARN,mapped to canonical source
+applications,APP-00378,source_variants,WARN,mapped to canonical source
+applications,APP-00398,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00443,source_variants,WARN,mapped to canonical source
+applications,APP-00463,source_variants,WARN,mapped to canonical source
+applications,APP-00509,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00513,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00536,source_variants,WARN,mapped to canonical source
+applications,APP-00539,source_variants,WARN,mapped to canonical source
+applications,APP-00547,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-00567,source_variants,WARN,mapped to canonical source
+applications,APP-00570,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00574,source_variants,WARN,mapped to canonical source
+applications,APP-00584,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00643,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00645,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00716,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00726,source_variants,WARN,mapped to canonical source
+applications,APP-00738,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-00741,source_variants,WARN,mapped to canonical source
+applications,APP-00762,source_variants,WARN,mapped to canonical source
+applications,APP-00763,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00795,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00807,source_variants,WARN,mapped to canonical source
+applications,APP-00820,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-00836,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-00861,source_variants,WARN,mapped to canonical source
+applications,APP-00876,source_variants,WARN,mapped to canonical source
+applications,APP-00883,source_variants,WARN,mapped to canonical source
+applications,APP-00913,source_variants,WARN,mapped to canonical source
+applications,APP-00919,source_variants,WARN,mapped to canonical source
+applications,APP-00946,source_variants,WARN,mapped to canonical source
+applications,APP-00956,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-00973,source_variants,WARN,mapped to canonical source
+applications,APP-00989,source_variants,WARN,mapped to canonical source
+applications,APP-01000,source_variants,WARN,mapped to canonical source
+applications,APP-01013,source_variants,WARN,mapped to canonical source
+applications,APP-01024,source_variants,WARN,mapped to canonical source
+applications,APP-01047,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01051,source_variants,WARN,mapped to canonical source
+applications,APP-01064,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-01067,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-01107,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-01109,source_variants,WARN,mapped to canonical source
+applications,APP-01160,source_variants,WARN,mapped to canonical source
+applications,APP-01170,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01183,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01224,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-01239,source_variants,WARN,mapped to canonical source
+applications,APP-01247,source_variants,WARN,mapped to canonical source
+applications,APP-01253,source_variants,WARN,mapped to canonical source
+applications,APP-01261,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-01272,source_variants,WARN,mapped to canonical source
+applications,APP-01312,source_variants,WARN,mapped to canonical source
+applications,APP-01326,source_variants,WARN,mapped to canonical source
+applications,APP-01335,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01348,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01359,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01362,source_variants,WARN,mapped to canonical source
+applications,APP-01393,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-01398,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01400,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01440,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01441,source_variants,WARN,mapped to canonical source
+applications,APP-01470,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01479,source_variants,WARN,mapped to canonical source
+applications,APP-01487,source_variants,WARN,mapped to canonical source
+applications,APP-01489,source_variants,WARN,mapped to canonical source
+applications,APP-01499,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-01505,source_variants,WARN,mapped to canonical source
+applications,APP-01517,source_variants,WARN,mapped to canonical source
+applications,APP-01523,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01580,source_variants,WARN,mapped to canonical source
+applications,APP-01622,source_variants,WARN,mapped to canonical source
+applications,APP-01634,source_variants,WARN,mapped to canonical source
+applications,APP-01644,source_variants,WARN,mapped to canonical source
+applications,APP-01674,source_variants,WARN,mapped to canonical source
+applications,APP-01721,source_variants,WARN,mapped to canonical source
+applications,APP-01725,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01727,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-01729,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01730,source_variants,WARN,mapped to canonical source
+applications,APP-01746,source_variants,WARN,mapped to canonical source
+applications,APP-01758,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01764,source_variants,WARN,mapped to canonical source
+applications,APP-01770,source_variants,WARN,mapped to canonical source
+applications,APP-01801,source_variants,WARN,mapped to canonical source
+applications,APP-01815,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01829,source_variants,WARN,mapped to canonical source
+applications,APP-01842,source_variants,WARN,mapped to canonical source
+applications,APP-01846,source_variants,WARN,mapped to canonical source
+applications,APP-01853,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01855,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01902,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01907,source_variants,WARN,mapped to canonical source
+applications,APP-01933,source_variants,WARN,mapped to canonical source
+applications,APP-01940,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-01952,source_variants,WARN,mapped to canonical source
+applications,APP-01966,source_variants,WARN,mapped to canonical source
+applications,APP-01972,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-01984,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-01989,source_variants,WARN,mapped to canonical source
+applications,APP-01997,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02005,source_variants,WARN,mapped to canonical source
+applications,APP-02006,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02014,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02016,source_variants,WARN,mapped to canonical source
+applications,APP-02037,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-02050,source_variants,WARN,mapped to canonical source
+applications,APP-02061,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02079,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-02086,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02094,source_variants,WARN,mapped to canonical source
+applications,APP-02101,source_variants,WARN,mapped to canonical source
+applications,APP-02123,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02125,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02138,source_variants,WARN,mapped to canonical source
+applications,APP-02168,source_variants,WARN,mapped to canonical source
+applications,APP-02193,source_variants,WARN,mapped to canonical source
+applications,APP-02206,source_variants,WARN,mapped to canonical source
+applications,APP-02214,source_variants,WARN,mapped to canonical source
+applications,APP-02215,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-02235,source_variants,WARN,mapped to canonical source
+applications,APP-02236,source_variants,WARN,mapped to canonical source
+applications,APP-02251,source_variants,WARN,mapped to canonical source
+applications,APP-02261,source_variants,WARN,mapped to canonical source
+applications,APP-02302,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-02304,source_variants,WARN,mapped to canonical source
+applications,APP-02315,source_variants,WARN,mapped to canonical source
+applications,APP-02336,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02360,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02370,source_variants,WARN,mapped to canonical source
+applications,APP-02407,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02419,source_variants,WARN,mapped to canonical source
+applications,APP-02456,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-02459,source_variants,WARN,mapped to canonical source
+applications,APP-02492,source_variants,WARN,mapped to canonical source
+applications,APP-02515,source_variants,WARN,mapped to canonical source
+applications,APP-02538,source_variants,WARN,mapped to canonical source
+applications,APP-02552,source_variants,WARN,mapped to canonical source
+applications,APP-02554,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-02571,source_variants,WARN,mapped to canonical source
+applications,APP-02607,source_variants,WARN,mapped to canonical source
+applications,APP-02608,source_variants,WARN,mapped to canonical source
+applications,APP-02614,source_variants,WARN,mapped to canonical source
+applications,APP-02624,source_variants,WARN,mapped to canonical source
+applications,APP-02636,source_variants,WARN,mapped to canonical source
+applications,APP-02639,source_variants,WARN,mapped to canonical source
+applications,APP-02641,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02676,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02688,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02735,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02742,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02743,source_variants,WARN,mapped to canonical source
+applications,APP-02753,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02767,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02777,source_variants,WARN,mapped to canonical source
+applications,APP-02799,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02819,source_variants,WARN,mapped to canonical source
+applications,APP-02825,source_variants,WARN,mapped to canonical source
+applications,APP-02826,applied_before_opening,ERROR,excluded from funnel KPIs
+applications,APP-02835,source_variants,WARN,mapped to canonical source
+applications,APP-02853,source_variants,WARN,mapped to canonical source
+applications,APP-02871,source_variants,WARN,mapped to canonical source
+applications,APP-02874,source_variants,WARN,mapped to canonical source
+applications,APP-02880,duplicate_applications,WARN,dropped (kept first occurrence)
+applications,APP-02885,source_variants,WARN,mapped to canonical source
+applications,APP-02902,source_variants,WARN,mapped to canonical source
+applications,APP-02910,source_variants,WARN,mapped to canonical source
+applications,APP-02917,source_variants,WARN,mapped to canonical source
+applications,APP-02926,missing_stage,ERROR,excluded from funnel KPIs
+applications,APP-02936,source_variants,WARN,mapped to canonical source
+applications,APP-02943,hired_without_offer,ERROR,excluded from funnel KPIs
+applications,APP-02948,source_variants,WARN,mapped to canonical source
+applications,APP-02955,duplicate_applications,WARN,dropped (kept first occurrence)
+crm_activities,ACT-000007,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000012,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000024,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000063,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000095,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000098,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000101,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000136,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000163,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000169,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000214,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000232,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000259,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000262,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000263,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000282,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000286,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000294,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000299,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000302,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000317,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000338,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000351,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000359,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000404,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000440,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000514,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000540,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000558,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000604,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000630,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000633,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000683,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000691,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000694,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000699,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000767,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000782,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000829,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000833,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000913,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-000918,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000951,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-000970,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001019,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001021,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001039,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001048,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001063,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001072,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001077,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001083,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001133,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001134,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001158,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001170,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001173,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001192,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-001241,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001273,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001278,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001283,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001305,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001355,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001377,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001383,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-001408,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001441,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001442,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-001511,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001518,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001526,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001532,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001568,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001585,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001620,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001621,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001646,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001669,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001700,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001705,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001708,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001748,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001751,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001787,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001792,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-001818,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001854,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001860,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001911,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001925,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001965,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001976,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-001977,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-001986,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002010,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002017,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002044,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002049,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002084,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002094,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002100,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002111,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002113,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002116,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002149,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002158,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002167,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002207,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002211,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002222,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002252,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002260,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002261,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002298,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002326,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002430,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002442,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002453,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002476,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002478,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002544,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002552,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002597,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002601,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002604,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002615,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002619,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002648,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-002717,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002734,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002747,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002757,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002874,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002879,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002897,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002978,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002994,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-002996,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003025,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003042,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003075,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003094,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003116,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003125,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003129,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003132,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003156,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003171,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003188,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003247,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003253,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003297,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003313,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003330,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003344,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003393,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003435,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003436,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003454,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003455,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003494,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003511,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003513,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003520,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003544,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003561,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003562,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003568,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003570,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003577,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003581,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003596,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003599,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003644,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003679,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003681,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003689,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003693,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003730,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003759,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003762,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003767,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003779,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003782,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003825,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003851,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003869,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003902,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003905,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003953,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003968,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-003983,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-003991,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004004,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004013,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004029,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004036,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004037,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004038,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004066,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004100,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004160,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004200,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004231,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004241,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004251,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004252,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004299,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004307,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004308,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004349,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004351,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004358,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004365,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004403,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004407,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004477,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004503,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004520,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004572,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004603,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004608,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004625,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004647,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004661,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004682,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004728,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004729,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004798,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004858,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004869,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004890,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004912,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-004941,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-004988,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005007,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005028,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005057,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005068,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005069,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005101,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005102,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005106,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005115,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005116,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005119,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005136,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005189,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005196,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005209,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005225,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005227,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005228,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005230,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005233,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005264,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005278,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005286,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005319,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005324,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005328,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005391,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005402,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005404,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005466,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005497,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005539,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005581,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005603,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005617,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005623,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005629,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005658,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005672,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005676,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005677,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005687,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005700,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005708,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005733,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005753,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005759,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005783,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005831,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005853,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005871,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005872,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005874,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005896,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005915,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005953,orphan_crm_activities,ERROR,excluded from activity KPIs
+crm_activities,ACT-005967,dirty_crm_keys,WARN,reference normalized
+crm_activities,ACT-005985,dirty_crm_keys,WARN,reference normalized
+requisitions,REQ-0027,closed_before_opened,ERROR,excluded from time-to-fill
+requisitions,REQ-0035,closed_before_opened,ERROR,excluded from time-to-fill
+requisitions,REQ-0062,closed_before_opened,ERROR,excluded from time-to-fill
+requisitions,REQ-0086,closed_before_opened,ERROR,excluded from time-to-fill
+requisitions,REQ-0088,closed_before_opened,ERROR,excluded from time-to-fill
+requisitions,REQ-0110,closed_before_opened,ERROR,excluded from time-to-fill

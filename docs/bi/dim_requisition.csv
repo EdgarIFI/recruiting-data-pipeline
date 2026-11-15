@@ -1,0 +1,121 @@
+req_id,client,area,city,seniority,openings,opened_at,closed_at,status,recruiter_id,time_to_fill_days,ttf_eligible,dq_closed_before_opened
+REQ-0001,Roble Construction,Operations,Queretaro,Junior,3,2026-06-24,2026-08-13,filled,R01,50,True,False
+REQ-0002,Altavista Retail,Logistics,Monterrey,Mid,2,2026-06-29,2026-09-03,filled,R07,66,True,False
+REQ-0003,Brisa Telecom,Logistics,Mexico City,Senior,2,2026-01-30,2026-04-01,filled,R02,61,True,False
+REQ-0004,Cerro Logistics,IT,Monterrey,Senior,3,2026-04-29,2026-07-16,filled,R02,78,True,False
+REQ-0005,Altavista Retail,HR,Monterrey,Junior,2,2026-01-20,2026-02-23,filled,R04,34,True,False
+REQ-0006,Roble Construction,Operations,Guadalajara,Junior,1,2026-10-02,,open,R06,,False,False
+REQ-0007,Brisa Telecom,Logistics,Monterrey,Senior,2,2026-05-21,2026-08-05,filled,R04,76,True,False
+REQ-0008,Altavista Retail,Logistics,Mexico City,Junior,3,2026-08-22,,open,R02,,False,False
+REQ-0009,Roble Construction,Finance,Saltillo,Junior,3,2026-09-08,,open,R04,,False,False
+REQ-0010,Altavista Retail,Logistics,Queretaro,Junior,3,2026-01-28,2026-02-25,filled,R02,28,True,False
+REQ-0011,Brisa Telecom,Sales,Saltillo,Junior,1,2026-01-15,2026-02-17,filled,R02,33,True,False
+REQ-0012,Northwind Foods,Operations,Monterrey,Junior,2,2026-06-09,2026-07-18,filled,R08,39,True,False
+REQ-0013,Brisa Telecom,Logistics,Guadalajara,Mid,3,2026-01-11,2026-02-21,cancelled,R01,41,False,False
+REQ-0014,Brisa Telecom,Finance,Monterrey,Mid,2,2026-02-18,2026-03-18,filled,R03,28,True,False
+REQ-0015,Northwind Foods,Sales,Queretaro,Senior,1,2026-04-24,2026-07-18,cancelled,R05,85,False,False
+REQ-0016,Lumen Health,Operations,Guadalajara,Junior,2,2026-06-22,,open,R06,,False,False
+REQ-0017,Brisa Telecom,Sales,Mexico City,Mid,3,2026-09-12,,open,R04,,False,False
+REQ-0018,Altavista Retail,Sales,Mexico City,Junior,2,2026-02-26,2026-03-31,filled,R07,33,True,False
+REQ-0019,Altavista Retail,Sales,Monterrey,Junior,1,2026-08-14,,open,R07,,False,False
+REQ-0020,Altavista Retail,Logistics,Guadalajara,Junior,2,2026-06-29,,open,R07,,False,False
+REQ-0021,Brisa Telecom,Operations,Monterrey,Senior,2,2026-04-06,2026-05-20,cancelled,R06,44,False,False
+REQ-0022,Brisa Telecom,HR,Monterrey,Mid,2,2026-06-16,2026-07-10,filled,R04,24,True,False
+REQ-0023,Altavista Retail,Finance,Monterrey,Junior,3,2026-03-06,2026-04-12,filled,R08,37,True,False
+REQ-0024,Brisa Telecom,Finance,Queretaro,Mid,3,2026-06-11,2026-07-19,cancelled,R07,38,False,False
+REQ-0025,Cerro Logistics,HR,Monterrey,Senior,3,2026-09-28,,open,R06,,False,False
+REQ-0026,Cerro Logistics,IT,Monterrey,Mid,1,2026-03-14,2026-04-30,filled,R04,47,True,False
+REQ-0027,Lumen Health,Logistics,Mexico City,Junior,1,2026-04-26,2026-04-18,filled,R08,-8,False,True
+REQ-0028,Altavista Retail,Sales,Monterrey,Mid,3,2026-08-24,,open,R01,,False,False
+REQ-0029,Puerta Financial,IT,Monterrey,Senior,3,2026-06-14,2026-09-03,cancelled,R03,81,False,False
+REQ-0030,Lumen Health,Operations,Queretaro,Mid,1,2026-05-06,2026-07-07,filled,R08,62,True,False
+REQ-0031,Roble Construction,Operations,Monterrey,Senior,3,2026-08-28,,open,R07,,False,False
+REQ-0032,Sierra Manufacturing,HR,Monterrey,Mid,1,2026-05-30,2026-07-01,filled,R02,32,True,False
+REQ-0033,Sierra Manufacturing,HR,Saltillo,Junior,2,2026-08-04,,open,R02,,False,False
+REQ-0034,Brisa Telecom,HR,Monterrey,Junior,2,2026-02-03,2026-02-21,filled,R08,18,True,False
+REQ-0035,Roble Construction,IT,Monterrey,Senior,3,2026-05-02,2026-04-24,cancelled,R05,-8,False,True
+REQ-0036,Sierra Manufacturing,Finance,Monterrey,Senior,3,2026-03-18,2026-04-27,filled,R01,40,True,False
+REQ-0037,Puerta Financial,Finance,Mexico City,Junior,2,2026-04-23,2026-06-05,filled,R05,43,True,False
+REQ-0038,Lumen Health,Sales,Mexico City,Junior,3,2026-08-07,,open,R05,,False,False
+REQ-0039,Puerta Financial,Logistics,Monterrey,Junior,1,2026-06-24,,open,R01,,False,False
+REQ-0040,Altavista Retail,Logistics,Monterrey,Junior,3,2026-01-28,2026-03-14,filled,R01,45,True,False
+REQ-0041,Altavista Retail,HR,Monterrey,Junior,2,2026-03-29,2026-04-15,filled,R05,17,True,False
+REQ-0042,Brisa Telecom,Logistics,Mexico City,Mid,3,2026-05-26,2026-07-10,filled,R07,45,True,False
+REQ-0043,Roble Construction,Sales,Mexico City,Junior,3,2026-04-18,2026-05-23,filled,R04,35,True,False
+REQ-0044,Northwind Foods,HR,Guadalajara,Mid,2,2026-07-20,,open,R01,,False,False
+REQ-0045,Puerta Financial,Logistics,Mexico City,Junior,2,2026-04-06,2026-05-11,filled,R08,35,True,False
+REQ-0046,Cerro Logistics,Operations,Mexico City,Mid,1,2026-06-28,,open,R08,,False,False
+REQ-0047,Northwind Foods,Operations,Saltillo,Junior,2,2026-06-27,2026-07-14,cancelled,R04,17,False,False
+REQ-0048,Brisa Telecom,Operations,Mexico City,Mid,3,2026-08-23,,open,R01,,False,False
+REQ-0049,Brisa Telecom,IT,Mexico City,Mid,3,2026-07-02,2026-08-16,filled,R08,45,True,False
+REQ-0050,Sierra Manufacturing,Sales,Mexico City,Junior,2,2026-06-17,,open,R06,,False,False
+REQ-0051,Roble Construction,HR,Mexico City,Junior,2,2026-01-19,2026-02-12,cancelled,R05,24,False,False
+REQ-0052,Lumen Health,Sales,Monterrey,Mid,2,2026-02-23,2026-03-16,filled,R05,21,True,False
+REQ-0053,Roble Construction,HR,Monterrey,Senior,1,2026-08-08,,open,R06,,False,False
+REQ-0054,Brisa Telecom,IT,Mexico City,Junior,2,2026-02-28,2026-03-28,filled,R03,28,True,False
+REQ-0055,Altavista Retail,Sales,Queretaro,Mid,2,2026-08-31,,open,R02,,False,False
+REQ-0056,Altavista Retail,Sales,Mexico City,Senior,1,2026-04-05,2026-06-12,filled,R06,68,True,False
+REQ-0057,Northwind Foods,IT,Monterrey,Junior,2,2026-08-29,,open,R07,,False,False
+REQ-0058,Brisa Telecom,Finance,Mexico City,Mid,2,2026-05-12,2026-06-02,cancelled,R04,21,False,False
+REQ-0059,Northwind Foods,IT,Monterrey,Mid,2,2026-09-22,,open,R02,,False,False
+REQ-0060,Northwind Foods,Logistics,Mexico City,Junior,3,2026-03-20,2026-05-02,filled,R07,43,True,False
+REQ-0061,Brisa Telecom,Operations,Queretaro,Mid,1,2026-06-01,2026-07-02,filled,R08,31,True,False
+REQ-0062,Northwind Foods,Finance,Saltillo,Mid,3,2026-07-04,2026-06-25,cancelled,R07,-9,False,True
+REQ-0063,Altavista Retail,HR,Monterrey,Mid,3,2026-07-13,,open,R05,,False,False
+REQ-0064,Sierra Manufacturing,Finance,Mexico City,Mid,1,2026-01-19,2026-03-12,filled,R03,52,True,False
+REQ-0065,Puerta Financial,IT,Guadalajara,Junior,2,2026-02-14,2026-03-02,cancelled,R01,16,False,False
+REQ-0066,Cerro Logistics,Logistics,Mexico City,Mid,1,2026-07-07,,open,R03,,False,False
+REQ-0067,Puerta Financial,Finance,Monterrey,Senior,1,2026-05-09,2026-07-07,filled,R08,59,True,False
+REQ-0068,Altavista Retail,Operations,Queretaro,Junior,2,2026-08-12,,open,R05,,False,False
+REQ-0069,Cerro Logistics,Sales,Guadalajara,Junior,1,2026-06-12,2026-07-18,filled,R06,36,True,False
+REQ-0070,Lumen Health,Sales,Mexico City,Junior,1,2026-07-31,,open,R07,,False,False
+REQ-0071,Puerta Financial,IT,Mexico City,Junior,3,2026-04-19,2026-05-19,filled,R07,30,True,False
+REQ-0072,Cerro Logistics,HR,Mexico City,Mid,2,2026-05-27,2026-06-19,filled,R02,23,True,False
+REQ-0073,Lumen Health,Finance,Saltillo,Mid,1,2026-05-28,2026-07-25,filled,R05,58,True,False
+REQ-0074,Cerro Logistics,IT,Monterrey,Senior,2,2026-06-25,,open,R04,,False,False
+REQ-0075,Brisa Telecom,Operations,Monterrey,Mid,3,2026-03-02,2026-03-23,filled,R08,21,True,False
+REQ-0076,Northwind Foods,IT,Mexico City,Mid,2,2026-07-11,,open,R05,,False,False
+REQ-0077,Cerro Logistics,Operations,Guadalajara,Senior,2,2026-09-14,,open,R06,,False,False
+REQ-0078,Altavista Retail,IT,Queretaro,Junior,2,2026-06-24,,open,R08,,False,False
+REQ-0079,Puerta Financial,Finance,Monterrey,Mid,1,2026-06-18,2026-07-29,filled,R06,41,True,False
+REQ-0080,Northwind Foods,HR,Monterrey,Junior,1,2026-05-25,2026-07-04,filled,R03,40,True,False
+REQ-0081,Lumen Health,Operations,Monterrey,Junior,3,2026-07-01,,open,R04,,False,False
+REQ-0082,Cerro Logistics,HR,Monterrey,Junior,2,2026-08-06,,open,R05,,False,False
+REQ-0083,Cerro Logistics,Finance,Monterrey,Mid,2,2026-04-20,2026-06-03,filled,R05,44,True,False
+REQ-0084,Altavista Retail,IT,Saltillo,Mid,2,2026-09-13,,open,R05,,False,False
+REQ-0085,Northwind Foods,IT,Monterrey,Mid,2,2026-04-30,2026-06-18,filled,R07,49,True,False
+REQ-0086,Northwind Foods,Sales,Mexico City,Senior,2,2026-02-27,2026-02-19,cancelled,R04,-8,False,True
+REQ-0087,Cerro Logistics,HR,Monterrey,Mid,1,2026-03-26,2026-05-22,filled,R08,57,True,False
+REQ-0088,Cerro Logistics,Operations,Guadalajara,Mid,2,2026-04-23,2026-04-21,filled,R04,-2,False,True
+REQ-0089,Cerro Logistics,IT,Monterrey,Mid,3,2026-03-31,2026-05-29,filled,R03,59,True,False
+REQ-0090,Brisa Telecom,Sales,Monterrey,Junior,1,2026-01-25,2026-02-24,filled,R06,30,True,False
+REQ-0091,Sierra Manufacturing,Operations,Monterrey,Senior,2,2026-08-02,,open,R03,,False,False
+REQ-0092,Northwind Foods,Operations,Saltillo,Senior,1,2026-06-18,,open,R07,,False,False
+REQ-0093,Puerta Financial,Finance,Monterrey,Junior,3,2026-01-15,2026-02-23,filled,R02,39,True,False
+REQ-0094,Roble Construction,Operations,Monterrey,Mid,2,2026-09-27,,open,R04,,False,False
+REQ-0095,Sierra Manufacturing,Sales,Mexico City,Mid,3,2026-08-27,,open,R05,,False,False
+REQ-0096,Altavista Retail,Logistics,Mexico City,Junior,2,2026-08-01,,open,R01,,False,False
+REQ-0097,Sierra Manufacturing,Sales,Monterrey,Junior,2,2026-01-13,2026-02-03,cancelled,R08,21,False,False
+REQ-0098,Sierra Manufacturing,HR,Monterrey,Mid,2,2026-09-29,,open,R08,,False,False
+REQ-0099,Northwind Foods,Operations,Monterrey,Junior,3,2026-06-14,,open,R04,,False,False
+REQ-0100,Lumen Health,Operations,Guadalajara,Senior,2,2026-06-24,2026-09-03,filled,R04,71,True,False
+REQ-0101,Northwind Foods,IT,Monterrey,Mid,1,2026-03-14,2026-04-30,filled,R04,47,True,False
+REQ-0102,Lumen Health,IT,Monterrey,Mid,3,2026-06-29,2026-08-07,filled,R08,39,True,False
+REQ-0103,Roble Construction,Finance,Saltillo,Mid,1,2026-03-12,2026-04-29,filled,R08,48,True,False
+REQ-0104,Sierra Manufacturing,HR,Monterrey,Junior,3,2026-06-18,2026-08-03,filled,R04,46,True,False
+REQ-0105,Brisa Telecom,Logistics,Queretaro,Junior,2,2026-08-02,,open,R08,,False,False
+REQ-0106,Northwind Foods,HR,Mexico City,Junior,2,2026-02-10,2026-03-30,filled,R06,48,True,False
+REQ-0107,Lumen Health,Operations,Monterrey,Junior,1,2026-04-03,2026-05-20,filled,R04,47,True,False
+REQ-0108,Sierra Manufacturing,HR,Monterrey,Junior,3,2026-03-12,2026-04-07,filled,R03,26,True,False
+REQ-0109,Altavista Retail,Finance,Guadalajara,Mid,3,2026-01-18,2026-02-20,cancelled,R04,33,False,False
+REQ-0110,Cerro Logistics,Sales,Guadalajara,Senior,3,2026-04-28,2026-04-16,filled,R04,-12,False,True
+REQ-0111,Lumen Health,HR,Guadalajara,Junior,3,2026-04-01,2026-05-11,filled,R05,40,True,False
+REQ-0112,Northwind Foods,IT,Queretaro,Junior,3,2026-05-02,2026-05-26,filled,R03,24,True,False
+REQ-0113,Sierra Manufacturing,Logistics,Guadalajara,Mid,3,2026-01-24,2026-03-21,filled,R07,56,True,False
+REQ-0114,Brisa Telecom,Logistics,Guadalajara,Senior,3,2026-04-20,2026-06-20,filled,R01,61,True,False
+REQ-0115,Roble Construction,IT,Monterrey,Junior,2,2026-07-02,2026-08-13,filled,R08,42,True,False
+REQ-0116,Roble Construction,Operations,Monterrey,Mid,2,2026-07-05,,open,R08,,False,False
+REQ-0117,Sierra Manufacturing,Logistics,Mexico City,Junior,2,2026-06-28,,open,R07,,False,False
+REQ-0118,Northwind Foods,Finance,Mexico City,Senior,3,2026-04-12,2026-06-30,filled,R08,79,True,False
+REQ-0119,Brisa Telecom,Sales,Guadalajara,Junior,1,2026-02-05,2026-03-07,filled,R08,30,True,False
+REQ-0120,Roble Construction,IT,Monterrey,Mid,2,2026-01-31,2026-03-02,filled,R02,30,True,False

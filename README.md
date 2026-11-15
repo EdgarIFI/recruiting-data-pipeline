@@ -143,7 +143,7 @@ recruiting-pipeline run --raw data/raw --out reports --bi   # + model tables as 
 pytest
 ```
 
-Outputs go to `reports/`. The committed `docs/` folder is produced by `recruiting-pipeline run --out docs`, and CI checks that every text output (Markdown, JSON, CSV) reproduces byte for byte.
+Outputs go to `reports/`. The committed `docs/` folder is produced by `recruiting-pipeline run --out docs --bi`, and CI checks that every text output (Markdown, JSON, CSV) reproduces byte for byte.
 
 ## How it is tested
 
@@ -177,6 +177,8 @@ tests/           ground truth, SQL vs pandas, planted signals, reproducibility
 docs/            committed outputs of the default run
 docs/deck/      case-study deck (.pptx + .pdf); every number in it comes from docs/
 docs/walkthrough.md   90-second overview + FAQ (general and technical), also in Spanish
+docs/bi/        model tables as CSV (input of the Power BI layer)
+powerbi/        Power BI layer: build guide, DAX measures, reconciliation table, theme
 ```
 
 ## About this project

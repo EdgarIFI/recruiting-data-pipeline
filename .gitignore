@@ -222,3 +222,7 @@ __marimo__/
 # --- project ---
 data/
 reports/
+
+# --- Power BI project (PBIP): local cache and user settings stay local ---
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

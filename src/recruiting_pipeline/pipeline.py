@@ -16,7 +16,9 @@ from .report import summary_markdown, write_figures, write_html
 from .validate import ValidationReport, run_validation, write_report
 from .warehouse import as_of, build_warehouse, run_kpis
 
-BI_TABLES = ["dim_requisition", "dim_stage", "fact_application", "fact_crm_activity", "dq_log"]
+# Model tables exported for BI tools. 'params' carries the snapshot date (as_of), which
+# Power BI needs to compute requisition aging exactly as the SQL does.
+BI_TABLES = ["dim_requisition", "dim_stage", "fact_application", "fact_crm_activity", "dq_log", "params"]
 
 
 @dataclass
@@ -57,6 +59,8 @@ def run_pipeline(raw_dir: str | Path, out_dir: str | Path, seed: int = 2027,
     if bi_export:
         (out / "bi").mkdir(exist_ok=True)
         for table in BI_TABLES:
-            con.execute(f"SELECT * FROM {table}").df().to_csv(out / "bi" / f"{table}.csv", index=False)
+            # ORDER BY 1, 2: stable, human-friendly row order, so the files diff cleanly.
+            order = "" if table == "params" else " ORDER BY 1, 2"
+            con.execute(f"SELECT * FROM {table}{order}").df().to_csv(out / "bi" / f"{table}.csv", index=False)
     con.close()
     return PipelineResult(validation, cleaned, kpis, objection, snapshot)

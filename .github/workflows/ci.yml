@@ -22,5 +22,5 @@ jobs:
         run: pytest
       - name: Committed docs reproduce exactly
         run: |
-          recruiting-pipeline run --raw data/raw --out docs
-          git diff --exit-code -- 'docs/*.md' 'docs/*.json' 'docs/kpis/'
+          recruiting-pipeline run --raw data/raw --out docs --bi
+          git diff --exit-code -- 'docs/*.md' 'docs/*.json' 'docs/kpis/' 'docs/bi/'
