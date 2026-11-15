@@ -20,7 +20,7 @@ jobs:
         run: pip install -e ".[dev]"
       - name: Test
         run: pytest
-      - name: End-to-end run
+      - name: Committed docs reproduce exactly
         run: |
-          recruiting-pipeline generate --out data/raw
-          recruiting-pipeline validate --raw data/raw --reports reports
+          recruiting-pipeline run --raw data/raw --out docs
+          git diff --exit-code -- 'docs/*.md' 'docs/*.json' 'docs/kpis/'

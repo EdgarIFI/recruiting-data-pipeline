@@ -1,0 +1,5 @@
+bucket,open_requisitions,avg_days_open
+0-30 days,8,19.9000
+31-60 days,9,46.7000
+61-90 days,10,69.9000
+90+ days,15,106.3000

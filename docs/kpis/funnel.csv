@@ -1,0 +1,11 @@
+cohort,stage,stage_rank,reached,share_of_applicants,conversion_from_previous
+all_eligible,applied,0,2955,1.0000,
+all_eligible,screening,1,1884,0.6376,0.6376
+all_eligible,interview,2,1094,0.3702,0.5807
+all_eligible,offer,3,486,0.1645,0.4442
+all_eligible,hired,4,141,0.0477,0.2901
+filled_requisitions,applied,0,1546,1.0000,
+filled_requisitions,screening,1,980,0.6339,0.6339
+filled_requisitions,interview,2,573,0.3706,0.5847
+filled_requisitions,offer,3,259,0.1675,0.4520
+filled_requisitions,hired,4,106,0.0686,0.4093
