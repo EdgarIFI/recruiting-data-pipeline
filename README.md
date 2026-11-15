@@ -9,7 +9,7 @@ Python · SQL (DuckDB) · pandera · pytest · GitHub Actions. **All data is syn
 - **9 of 9** data-quality defect types are found exactly as planted, for any seed, and a clean dataset yields **zero** findings.
 - KPIs are written in plain SQL and cross-checked against an independent pandas implementation (71 tests in CI).
 - Results come with their uncertainty (95% Wilson intervals), and an **Objection** step tries to break the conclusions before anyone reads them.
-- **[Case-study deck (PDF, 13 slides)](docs/deck/recruiting-pipeline-case-study.pdf)** · [summary](docs/summary.md) · [validation report](docs/validation_report.md)
+- **[Case-study deck (PDF, 13 slides)](docs/deck/recruiting-pipeline-case-study.pdf)** · [90-second walkthrough and FAQ](docs/walkthrough.md) ([español](docs/walkthrough.es.md)) · [summary](docs/summary.md) · [validation report](docs/validation_report.md)
 
 **Why this project exists.** In my data-intelligence internship I run a weekly pipeline that reconciles about 3,400 wellbeing alerts with 1,700 CRM cases before they feed a dashboard. That work and its data are confidential, so this repository rebuilds the *method* from scratch in a domain anyone can inspect: a recruiting funnel.
 
@@ -118,6 +118,7 @@ The same metrics, computed on the raw exports (naive) and on the cleaned data (p
 
 - **Cohort choice.** On all applications, offer → hire conversion is 29%; on filled requisitions it is 41%. Candidates of open requisitions are still in process, so mixing them in understates conversion.
 - **Hire rate is capped by openings** (one to three per requisition), so per-source hire rates are noisy. Interview rate is the more informative signal at this volume.
+- **Time-to-fill is right-censored.** It uses filled requisitions only, so the slowest searches (15 requisitions still open after 90 days) are not in the median, and the reported 41 days is optimistic. Survival analysis (Kaplan–Meier, with open requisitions as censored observations) is the right next step.
 - **What the generator does not model:** fuzzy duplicates (the same person with a different email), candidates re-applying, requisitions re-opened after closing, and time zones. Real exports would need rules for each.
 - **The snapshot date is data-driven** (the latest event in the data), so KPIs are reproducible. A production version would take it as a parameter.
 
@@ -175,6 +176,7 @@ src/recruiting_pipeline/
 tests/           ground truth, SQL vs pandas, planted signals, reproducibility
 docs/            committed outputs of the default run
 docs/deck/      case-study deck (.pptx + .pdf); every number in it comes from docs/
+docs/walkthrough.md   90-second overview + FAQ (general and technical), also in Spanish
 ```
 
 ## About this project
