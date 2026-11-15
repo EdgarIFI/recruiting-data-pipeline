@@ -1,0 +1,237 @@
+{
+  "overall": "ERROR",
+  "file_map": {
+    "ats_candidates_export.csv": "applications",
+    "ats_requisitions_export.csv": "requisitions",
+    "crm_export_01.csv": "crm_activities",
+    "crm_export_02.csv": "crm_activities",
+    "crm_export_03.csv": "crm_activities",
+    "crm_export_04.csv": "crm_activities",
+    "crm_export_05.csv": "crm_activities",
+    "crm_export_06.csv": "crm_activities"
+  },
+  "findings": [
+    {
+      "check_id": "schema_drift",
+      "table": "*",
+      "layer": "ingestion",
+      "severity": "WARN",
+      "count": 1,
+      "description": "Export files that arrived with known renamed columns.",
+      "action": "Columns mapped to their canonical names.",
+      "sample": [
+        "crm_export_04.csv: activity_date->activity_at"
+      ],
+      "status": "WARN"
+    },
+    {
+      "check_id": "unknown_files",
+      "table": "*",
+      "layer": "ingestion",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "CSV files that match no table (Jaccard < 0.8).",
+      "action": "File ignored; review the export.",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "empty_files",
+      "table": "*",
+      "layer": "ingestion",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "Recognized export files with zero rows.",
+      "action": "Check the export job.",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "missing_tables",
+      "table": "*",
+      "layer": "ingestion",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "Expected tables with no source file at all.",
+      "action": "Pipeline cannot compute KPIs that depend on them.",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "schema_requisitions",
+      "table": "requisitions",
+      "layer": "schema",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "All columns have the expected type, format and allowed values.",
+      "action": "",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "null_stage_reached",
+      "table": "applications",
+      "layer": "schema",
+      "severity": "ERROR",
+      "count": 15,
+      "description": "Column 'stage_reached' fails check 'not_nullable'.",
+      "action": "Rows excluded from KPIs and listed for review.",
+      "sample": [
+        "nan"
+      ],
+      "status": "ERROR"
+    },
+    {
+      "check_id": "schema_crm_activities",
+      "table": "crm_activities",
+      "layer": "schema",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "All columns have the expected type, format and allowed values.",
+      "action": "",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "duplicate_applications",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "WARN",
+      "count": 37,
+      "description": "Exact duplicate application rows (same values in every column).",
+      "action": "Keep the first occurrence, drop the rest.",
+      "sample": [
+        "APP-00795",
+        "APP-02688",
+        "APP-02880",
+        "APP-01940",
+        "APP-00513"
+      ],
+      "status": "WARN"
+    },
+    {
+      "check_id": "source_variants",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "WARN",
+      "count": 120,
+      "description": "Source labels spelled differently from the canonical list.",
+      "action": "Mapped to the canonical source name.",
+      "sample": [
+        "occ",
+        "INDEED",
+        "OCC Mundial",
+        "career site",
+        "Careers page"
+      ],
+      "status": "WARN"
+    },
+    {
+      "check_id": "unknown_sources",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "Source labels that match no known source or variant.",
+      "action": "Grouped as 'Unknown' and listed for review.",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "hired_without_offer",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 9,
+      "description": "Outcome is 'hired' but the funnel stage never reached 'hired'.",
+      "action": "Excluded from funnel KPIs; flagged for the recruiting team.",
+      "sample": [
+        "APP-02943",
+        "APP-01107",
+        "APP-00202",
+        "APP-01727",
+        "APP-01972"
+      ],
+      "status": "ERROR"
+    },
+    {
+      "check_id": "applied_before_opening",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 21,
+      "description": "Application date earlier than the requisition's opening date.",
+      "action": "Excluded from funnel KPIs; flagged for review.",
+      "sample": [
+        "APP-02079",
+        "APP-01359",
+        "APP-01984",
+        "APP-00716",
+        "APP-00645"
+      ],
+      "status": "ERROR"
+    },
+    {
+      "check_id": "orphan_applications",
+      "table": "applications",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 0,
+      "description": "Applications whose requisition does not exist.",
+      "action": "Excluded from KPIs; flagged for review.",
+      "sample": [],
+      "status": "OK"
+    },
+    {
+      "check_id": "closed_before_opened",
+      "table": "requisitions",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 6,
+      "description": "Requisition closed before it was opened.",
+      "action": "Excluded from time-to-fill; flagged for review.",
+      "sample": [
+        "REQ-0027",
+        "REQ-0035",
+        "REQ-0062",
+        "REQ-0086",
+        "REQ-0088"
+      ],
+      "status": "ERROR"
+    },
+    {
+      "check_id": "dirty_crm_keys",
+      "table": "crm_activities",
+      "layer": "business_rule",
+      "severity": "WARN",
+      "count": 250,
+      "description": "CRM references with wrong case, extra spaces or a missing hyphen.",
+      "action": "Normalized to the canonical 'APP-00000' format.",
+      "sample": [
+        "  APP-01004 ",
+        "app-02359",
+        "APP00062",
+        "app-02451",
+        "APP00123"
+      ],
+      "status": "WARN"
+    },
+    {
+      "check_id": "orphan_crm_activities",
+      "table": "crm_activities",
+      "layer": "business_rule",
+      "severity": "ERROR",
+      "count": 44,
+      "description": "CRM activities whose application does not exist, even after normalization.",
+      "action": "Excluded from activity KPIs; listed for the CRM owner.",
+      "sample": [
+        "APP-94818",
+        "APP-98138",
+        "APP-96450",
+        "APP-95344",
+        "APP-96321"
+      ],
+      "status": "ERROR"
+    }
+  ]
+}

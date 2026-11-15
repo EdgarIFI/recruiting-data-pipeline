@@ -1,8 +1,11 @@
 """Business rules, written by hand on purpose: each one encodes a piece of domain logic
 that a reviewer should be able to read and challenge.
 
-Every rule returns a Finding with the exact number of affected rows, what the
-pipeline will do about them, and a small sample of ids for manual review.
+Each rule is a *mask* (a boolean Series over the rows it judges). The same masks are
+used twice:
+- validation turns them into Findings (counts + action + sample ids);
+- cleaning (clean.py) turns them into row-level data-quality flags.
+So what the report counts is, by construction, exactly what the pipeline flags.
 """
 
 from __future__ import annotations
@@ -16,95 +19,102 @@ from .normalize import normalize_application_refs, normalize_sources
 SAMPLE = 5
 
 
-def _ids(df: pd.DataFrame, col: str) -> list[str]:
-    return df[col].astype(str).head(SAMPLE).tolist()
+# --- masks: applications ----------------------------------------------------------------
+def mask_duplicate_applications(apps: pd.DataFrame) -> pd.Series:
+    """Exact duplicates (every data column equal); the first occurrence is not flagged."""
+    data_cols = [c for c in apps.columns if not c.startswith("_")]
+    return apps.duplicated(subset=data_cols, keep="first")
 
 
-def duplicate_applications(apps: pd.DataFrame) -> Finding:
-    data_cols = [c for c in apps.columns if c != "_source_file"]
-    dup = apps[apps.duplicated(subset=data_cols, keep="first")]
-    return Finding(
-        "duplicate_applications", "applications", "business_rule", "WARN", len(dup),
-        "Exact duplicate application rows (same values in every column).",
-        "Keep the first occurrence, drop the rest.", _ids(dup, "application_id"))
-
-
-def source_variants(apps: pd.DataFrame) -> list[Finding]:
+def mask_source_variants(apps: pd.DataFrame) -> pd.Series:
     raw = apps["source"]
-    mapped = normalize_sources(raw)
-    variants = apps[raw.notna() & ~raw.isin(SOURCES) & mapped.notna()]
-    unknown = apps[raw.notna() & mapped.isna()]
-    return [
-        Finding("source_variants", "applications", "business_rule", "WARN", len(variants),
-                "Source labels spelled differently from the canonical list.",
-                "Mapped to the canonical source name.",
-                sorted(variants["source"].unique().tolist())[:SAMPLE]),
-        Finding("unknown_sources", "applications", "business_rule", "ERROR", len(unknown),
-                "Source labels that match no known source or variant.",
-                "Grouped as 'Unknown' and listed for review.",
-                sorted(unknown["source"].unique().tolist())[:SAMPLE]),
-    ]
+    return raw.notna() & ~raw.isin(SOURCES) & normalize_sources(raw).notna()
 
 
-def hired_without_offer(apps: pd.DataFrame) -> Finding:
+def mask_unknown_sources(apps: pd.DataFrame) -> pd.Series:
+    raw = apps["source"]
+    return raw.notna() & normalize_sources(raw).isna()
+
+
+def mask_missing_stage(apps: pd.DataFrame) -> pd.Series:
+    return apps["stage_reached"].isna()
+
+
+def mask_hired_without_offer(apps: pd.DataFrame) -> pd.Series:
     """Funnel logic: a hire must have reached the 'hired' stage."""
-    bad = apps[(apps["outcome"] == "hired") & apps["stage_reached"].notna()
-               & (apps["stage_reached"] != "hired")]
-    return Finding(
-        "hired_without_offer", "applications", "business_rule", "ERROR", len(bad),
-        "Outcome is 'hired' but the funnel stage never reached 'hired'.",
-        "Excluded from conversion KPIs; flagged for the recruiting team.",
-        _ids(bad, "application_id"))
+    return ((apps["outcome"] == "hired") & apps["stage_reached"].notna()
+            & (apps["stage_reached"] != "hired"))
 
 
-def applied_before_opening(apps: pd.DataFrame, reqs: pd.DataFrame) -> list[Finding]:
-    opened = apps["req_id"].map(reqs.drop_duplicates("req_id").set_index("req_id")["opened_at"])
-    orphan = apps[opened.isna() & apps["req_id"].notna()]
-    early = apps[opened.notna() & (apps["applied_at"] < opened)]
-    return [
-        Finding("applied_before_opening", "applications", "business_rule", "ERROR", len(early),
-                "Application date earlier than the requisition's opening date.",
-                "Excluded from time-based KPIs; flagged for review.",
-                _ids(early, "application_id")),
-        Finding("orphan_applications", "applications", "business_rule", "ERROR", len(orphan),
-                "Applications whose requisition does not exist.",
-                "Excluded from KPIs; flagged for review.", _ids(orphan, "application_id")),
-    ]
+def _opened_at(apps: pd.DataFrame, reqs: pd.DataFrame) -> pd.Series:
+    return apps["req_id"].map(reqs.drop_duplicates("req_id").set_index("req_id")["opened_at"])
 
 
-def closed_before_opened(reqs: pd.DataFrame) -> Finding:
-    bad = reqs[reqs["closed_at"].notna() & (reqs["closed_at"] < reqs["opened_at"])]
-    return Finding(
-        "closed_before_opened", "requisitions", "business_rule", "ERROR", len(bad),
-        "Requisition closed before it was opened.",
-        "Excluded from time-to-fill; flagged for review.", _ids(bad, "req_id"))
+def mask_applied_before_opening(apps: pd.DataFrame, reqs: pd.DataFrame) -> pd.Series:
+    opened = _opened_at(apps, reqs)
+    return opened.notna() & (apps["applied_at"] < opened)
 
 
-def crm_references(crm: pd.DataFrame, apps: pd.DataFrame) -> list[Finding]:
+def mask_orphan_applications(apps: pd.DataFrame, reqs: pd.DataFrame) -> pd.Series:
+    return apps["req_id"].notna() & ~apps["req_id"].isin(set(reqs["req_id"]))
+
+
+# --- masks: requisitions ----------------------------------------------------------------
+def mask_closed_before_opened(reqs: pd.DataFrame) -> pd.Series:
+    return reqs["closed_at"].notna() & (reqs["closed_at"] < reqs["opened_at"])
+
+
+# --- masks: CRM -------------------------------------------------------------------------
+def mask_dirty_crm_keys(crm: pd.DataFrame, apps: pd.DataFrame) -> pd.Series:
     raw = crm["application_ref"]
     norm = normalize_application_refs(raw)
-    valid_ids = set(apps["application_id"].dropna())
-    dirty = crm[norm.notna() & (raw != norm) & norm.isin(valid_ids)]
-    orphan = crm[~norm.isin(valid_ids)]
-    return [
-        Finding("dirty_crm_keys", "crm_activities", "business_rule", "WARN", len(dirty),
-                "CRM references with wrong case, extra spaces or a missing hyphen.",
-                "Normalized to the canonical 'APP-00000' format.",
-                raw[dirty.index].head(SAMPLE).tolist()),
-        Finding("orphan_crm_activities", "crm_activities", "business_rule", "ERROR", len(orphan),
-                "CRM activities whose application does not exist, even after normalization.",
-                "Excluded from activity KPIs; listed for the CRM owner.",
-                raw[orphan.index].head(SAMPLE).tolist()),
-    ]
+    return norm.notna() & (raw != norm) & norm.isin(set(apps["application_id"].dropna()))
+
+
+def mask_orphan_crm(crm: pd.DataFrame, apps: pd.DataFrame) -> pd.Series:
+    norm = normalize_application_refs(crm["application_ref"])
+    return ~norm.isin(set(apps["application_id"].dropna()))
+
+
+# --- findings ---------------------------------------------------------------------------
+def _finding(check_id: str, table: str, severity: str, df: pd.DataFrame, mask: pd.Series,
+             description: str, action: str, sample_col: str) -> Finding:
+    hits = df[mask]
+    sample = hits[sample_col].astype(str).drop_duplicates().head(SAMPLE).tolist()
+    return Finding(check_id, table, "business_rule", severity, int(mask.sum()),
+                   description, action, sample)
 
 
 def run_rules(tables: dict[str, pd.DataFrame]) -> list[Finding]:
     reqs, apps, crm = tables["requisitions"], tables["applications"], tables["crm_activities"]
+    A, R, C = "applications", "requisitions", "crm_activities"
     return [
-        duplicate_applications(apps),
-        *source_variants(apps),
-        hired_without_offer(apps),
-        *applied_before_opening(apps, reqs),
-        closed_before_opened(reqs),
-        *crm_references(crm, apps),
+        _finding("duplicate_applications", A, "WARN", apps, mask_duplicate_applications(apps),
+                 "Exact duplicate application rows (same values in every column).",
+                 "Keep the first occurrence, drop the rest.", "application_id"),
+        _finding("source_variants", A, "WARN", apps, mask_source_variants(apps),
+                 "Source labels spelled differently from the canonical list.",
+                 "Mapped to the canonical source name.", "source"),
+        _finding("unknown_sources", A, "ERROR", apps, mask_unknown_sources(apps),
+                 "Source labels that match no known source or variant.",
+                 "Grouped as 'Unknown' and listed for review.", "source"),
+        _finding("hired_without_offer", A, "ERROR", apps, mask_hired_without_offer(apps),
+                 "Outcome is 'hired' but the funnel stage never reached 'hired'.",
+                 "Excluded from funnel KPIs; flagged for the recruiting team.", "application_id"),
+        _finding("applied_before_opening", A, "ERROR", apps,
+                 mask_applied_before_opening(apps, reqs),
+                 "Application date earlier than the requisition's opening date.",
+                 "Excluded from funnel KPIs; flagged for review.", "application_id"),
+        _finding("orphan_applications", A, "ERROR", apps, mask_orphan_applications(apps, reqs),
+                 "Applications whose requisition does not exist.",
+                 "Excluded from KPIs; flagged for review.", "application_id"),
+        _finding("closed_before_opened", R, "ERROR", reqs, mask_closed_before_opened(reqs),
+                 "Requisition closed before it was opened.",
+                 "Excluded from time-to-fill; flagged for review.", "req_id"),
+        _finding("dirty_crm_keys", C, "WARN", crm, mask_dirty_crm_keys(crm, apps),
+                 "CRM references with wrong case, extra spaces or a missing hyphen.",
+                 "Normalized to the canonical 'APP-00000' format.", "application_ref"),
+        _finding("orphan_crm_activities", C, "ERROR", crm, mask_orphan_crm(crm, apps),
+                 "CRM activities whose application does not exist, even after normalization.",
+                 "Excluded from activity KPIs; listed for the CRM owner.", "application_ref"),
     ]

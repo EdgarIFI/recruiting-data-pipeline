@@ -1,0 +1,9 @@
+table_name,check_id,severity,action,affected_rows
+crm_activities,orphan_crm_activities,ERROR,excluded from activity KPIs,44
+applications,applied_before_opening,ERROR,excluded from funnel KPIs,21
+applications,missing_stage,ERROR,excluded from funnel KPIs,15
+applications,hired_without_offer,ERROR,excluded from funnel KPIs,9
+requisitions,closed_before_opened,ERROR,excluded from time-to-fill,6
+crm_activities,dirty_crm_keys,WARN,reference normalized,250
+applications,source_variants,WARN,mapped to canonical source,120
+applications,duplicate_applications,WARN,dropped (kept first occurrence),37
