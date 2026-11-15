@@ -1,7 +1,17 @@
 # recruiting-data-pipeline
 
-**A recruiting-funnel pipeline that refuses to compute a KPI on data it has not validated.**
-Python, SQL (DuckDB), pandera, pytest. All data is synthetic.
+> **Messy, multi-source recruiting data in; KPIs you can defend out.** Every data-quality check is tested against defects planted with a known count, so the numbers are trusted by construction, not by eyeballing.
+
+Python · SQL (DuckDB) · pandera · pytest · GitHub Actions. **All data is synthetic.**
+
+**In 30 seconds**
+
+- **9 of 9** data-quality defect types are found exactly as planted, for any seed, and a clean dataset yields **zero** findings.
+- KPIs are written in plain SQL and cross-checked against an independent pandas implementation (71 tests in CI).
+- Results come with their uncertainty (95% Wilson intervals), and an **Objection** step tries to break the conclusions before anyone reads them.
+- **[Case-study deck (PDF, 13 slides)](docs/deck/recruiting-pipeline-case-study.pdf)** · [summary](docs/summary.md) · [validation report](docs/validation_report.md)
+
+**Why this project exists.** In my data-intelligence internship I run a weekly pipeline that reconciles about 3,400 wellbeing alerts with 1,700 CRM cases before they feed a dashboard. That work and its data are confidential, so this repository rebuilds the *method* from scratch in a domain anyone can inspect: a recruiting funnel.
 
 ![Hiring funnel](docs/figures/funnel.png)
 
@@ -10,7 +20,7 @@ Python, SQL (DuckDB), pandera, pytest. All data is synthetic.
 | **Question** | Where do candidates come from, where do they drop out, and how long do requisitions take to fill, when the data comes from systems that disagree? |
 | **Pipeline** | content-based ingestion → schema + business-rule validation → cleaning with row-level flags → DuckDB model → KPIs in SQL → static report |
 | **Trust** | every data-quality check is tested against defects planted with a known count; a clean dataset yields zero findings |
-| **Outputs** | [summary](docs/summary.md) · [validation report](docs/validation_report.md) · [objection analysis](docs/objection.md) · [KPI tables](docs/kpis) · `docs/report.html` (self-contained page) |
+| **Outputs** | [case-study deck](docs/deck/recruiting-pipeline-case-study.pdf) ([.pptx](docs/deck/recruiting-pipeline-case-study.pptx)) · [summary](docs/summary.md) · [validation report](docs/validation_report.md) · [objection analysis](docs/objection.md) · [KPI tables](docs/kpis) · `docs/report.html` (self-contained page) |
 
 The write-up follows **AXIOM**, the five-phase structure I use for analytical work:
 **A**lcance (scope), e**X**ploración (exploration), **I**nferencia (inference),
@@ -164,6 +174,7 @@ src/recruiting_pipeline/
   pipeline.py    end-to-end run
 tests/           ground truth, SQL vs pandas, planted signals, reproducibility
 docs/            committed outputs of the default run
+docs/deck/      case-study deck (.pptx + .pdf); every number in it comes from docs/
 ```
 
 ## About this project
