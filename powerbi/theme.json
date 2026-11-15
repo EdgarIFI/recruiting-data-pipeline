@@ -1,0 +1,16 @@
+{
+  "name": "Recruiting Pipeline",
+  "dataColors": ["#2A78D6", "#6B7A90", "#16324F", "#86B6EF", "#1A8F5C", "#B7791F", "#C62E2E", "#A9B4C2"],
+  "background": "#FFFFFF",
+  "foreground": "#1F2430",
+  "tableAccent": "#2A78D6",
+  "good": "#1A8F5C",
+  "neutral": "#B7791F",
+  "bad": "#C62E2E",
+  "textClasses": {
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#16324F" },
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#16324F" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#16324F" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#1F2430" }
+  }
+}
