@@ -14,6 +14,8 @@ dependencies = [
     "pandas>=2.2",
     "numpy>=1.26",
     "pandera>=0.20",
+    "duckdb>=1.1",
+    "matplotlib>=3.8",
 ]
 
 [project.optional-dependencies]
@@ -24,6 +26,9 @@ recruiting-pipeline = "recruiting_pipeline.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+recruiting_pipeline = ["sql/*.sql"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

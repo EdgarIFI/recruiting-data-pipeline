@@ -35,6 +35,13 @@ MANIFEST_FILE = "_manifest.json"
 SOURCE_WEIGHTS = [0.34, 0.22, 0.16, 0.12, 0.10, 0.06]
 # Probability of the furthest stage reached (applied ... hired).
 STAGE_WEIGHTS = [0.38, 0.27, 0.20, 0.07, 0.08]
+
+# Planted signals: real effects the analysis should *recover*, so it can be checked
+# in both directions (finds true effects, does not invent false ones).
+# 1) Referrals progress further in the funnel than every other source.
+REFERRAL_STAGE_WEIGHTS = [0.20, 0.25, 0.27, 0.10, 0.18]
+# 2) Time-to-fill grows with seniority (days from opening to closing, uniform range).
+TIME_TO_FILL_DAYS = {"Junior": (10, 50), "Mid": (20, 70), "Senior": (35, 90)}
 SOURCE_VARIANT_SPELLINGS = {
     "LinkedIn": ["linkedin", "Linked In", " LinkedIn "],
     "OCC": ["occ", "OCC Mundial"],
@@ -52,16 +59,24 @@ def _days(rng: np.random.Generator, low: int, high: int, size: int) -> pd.Timede
 def _requisitions(cfg: GenerationConfig, rng: np.random.Generator) -> pd.DataFrame:
     n = cfg.n_requisitions
     start = pd.Timestamp(cfg.start_date)
-    opened = start + _days(rng, 0, cfg.horizon_days - 90, n)
     status = rng.choice(["filled", "open", "cancelled"], size=n, p=[0.55, 0.30, 0.15])
-    closed = opened + _days(rng, 10, 90, n)
+    # Requisitions still open at export time were opened recently; closed ones span
+    # the whole period.
+    opened = np.where(status == "open",
+                      start + _days(rng, cfg.horizon_days - 120, cfg.horizon_days - 5, n),
+                      start + _days(rng, 0, cfg.horizon_days - 100, n))
+    opened = pd.DatetimeIndex(opened)
+    seniority = rng.choice(SENIORITIES, size=n, p=[0.5, 0.35, 0.15])
+    low = np.array([TIME_TO_FILL_DAYS[s][0] for s in seniority])
+    high = np.array([TIME_TO_FILL_DAYS[s][1] for s in seniority])
+    closed = opened + pd.to_timedelta(rng.integers(low, high + 1), unit="D")
     closed = pd.Series(closed).where(status != "open")
     return pd.DataFrame({
         "req_id": [f"REQ-{i:04d}" for i in range(1, n + 1)],
         "client": rng.choice(CLIENTS, size=n),
         "area": rng.choice(AREAS, size=n),
         "city": rng.choice(CITIES, size=n, p=[0.40, 0.25, 0.15, 0.12, 0.08]),
-        "seniority": rng.choice(SENIORITIES, size=n, p=[0.5, 0.35, 0.15]),
+        "seniority": seniority,
         "openings": rng.integers(1, 4, size=n),
         "opened_at": opened,
         "closed_at": closed.values,
@@ -75,8 +90,17 @@ def _applications(cfg: GenerationConfig, rng: np.random.Generator,
     n = cfg.n_applications
     req_idx = rng.integers(0, len(reqs), size=n)
     req = reqs.iloc[req_idx].reset_index(drop=True)
-    applied = req["opened_at"] + _days(rng, 0, 45, n)
-    stage = rng.choice(STAGES, size=n, p=STAGE_WEIGHTS)
+    # Applications arrive after opening and before closing (closed requisitions) or
+    # before the export date (open ones). No event is ever after the export date.
+    snapshot = pd.Timestamp(cfg.start_date) + pd.Timedelta(days=cfg.horizon_days)
+    end = req["closed_at"].fillna(snapshot)
+    window = (end - req["opened_at"]).dt.days.clip(upper=45)
+    applied = req["opened_at"] + pd.to_timedelta(
+        np.floor(rng.random(n) * (window.to_numpy() + 1)), unit="D")
+    source = rng.choice(SOURCES, size=n, p=SOURCE_WEIGHTS)
+    stage = np.where(source == "Referral",
+                     rng.choice(STAGES, size=n, p=REFERRAL_STAGE_WEIGHTS),
+                     rng.choice(STAGES, size=n, p=STAGE_WEIGHTS))
 
     # Outcome must agree with the stage and with the requisition status.
     outcome = np.where(stage == "hired", "hired", "rejected")
@@ -86,20 +110,46 @@ def _applications(cfg: GenerationConfig, rng: np.random.Generator,
     outcome = np.where(not_hired & open_req & (roll < 0.6), "in_process", outcome)
     outcome = np.where(not_hired & (roll >= 0.85), "withdrawn", outcome)
 
-    return pd.DataFrame({
+    apps = pd.DataFrame({
         "application_id": [f"APP-{i:05d}" for i in range(1, n + 1)],
         "candidate_id": [f"CND-{i:05d}" for i in rng.permutation(n) + 1],
         "req_id": req["req_id"],
-        "source": rng.choice(SOURCES, size=n, p=SOURCE_WEIGHTS),
+        "source": source,
         "applied_at": applied,
         "stage_reached": stage,
         "outcome": outcome,
     })
+    return _enforce_hiring_consistency(apps, reqs, rng)
+
+
+def _enforce_hiring_consistency(apps: pd.DataFrame, reqs: pd.DataFrame,
+                                rng: np.random.Generator) -> pd.DataFrame:
+    """Hires must agree with the requisition: filled -> 1..openings hires,
+    open -> fewer hires than openings, cancelled -> no hires.
+
+    Extra hires are demoted to 'offer' (offer declined); a filled requisition without
+    a hire promotes its furthest-progressed applicant.
+    """
+    apps = apps.copy()
+    rank = {s: i for i, s in enumerate(STAGES)}
+    req_info = reqs.set_index("req_id")[["status", "openings"]]
+    for req_id, grp in apps.groupby("req_id", sort=True):
+        status, openings = req_info.loc[req_id, "status"], int(req_info.loc[req_id, "openings"])
+        max_hires = {"filled": openings, "open": openings - 1, "cancelled": 0}[status]
+        hired = grp.index[grp["outcome"] == "hired"].to_numpy()
+        if len(hired) > max_hires:
+            extra = rng.choice(hired, size=len(hired) - max_hires, replace=False)
+            apps.loc[extra, ["stage_reached", "outcome"]] = ["offer", "rejected"]
+        if status == "filled" and len(hired) == 0:
+            best = grp["stage_reached"].map(rank).idxmax()
+            apps.loc[best, ["stage_reached", "outcome"]] = ["hired", "hired"]
+    return apps
 
 
 def _crm(cfg: GenerationConfig, rng: np.random.Generator,
          apps: pd.DataFrame) -> pd.DataFrame:
     n = cfg.n_crm_activities
+    snapshot = pd.Timestamp(cfg.start_date) + pd.Timedelta(days=cfg.horizon_days)
     app = apps.iloc[rng.integers(0, len(apps), size=n)].reset_index(drop=True)
     stage_rank = app["stage_reached"].map({s: i for i, s in enumerate(STAGES)}).to_numpy()
     # Interviews and offers can only exist if the candidate reached that stage.
@@ -110,7 +160,9 @@ def _crm(cfg: GenerationConfig, rng: np.random.Generator,
         "activity_id": [f"ACT-{i:06d}" for i in range(1, n + 1)],
         "application_ref": app["application_id"],
         "activity_type": activity,
-        "activity_at": app["applied_at"] + _days(rng, 0, 30, n),
+        "activity_at": app["applied_at"] + pd.to_timedelta(
+            np.floor(rng.random(n) * (np.minimum(30, (snapshot - app["applied_at"]).dt.days) + 1)),
+            unit="D"),
         "recruiter_id": rng.choice(RECRUITERS, size=n),
     })
 
